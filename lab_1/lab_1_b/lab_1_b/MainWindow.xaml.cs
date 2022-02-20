@@ -68,50 +68,12 @@ namespace lab_1_b
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
-            Manufactuerer.Text = kimo.Manufactuerer;
-            PackageDimensions.Text = kimo.PackageDimensions;
-            ItemWeight.Text = kimo.ItemWeight;
-            PartNumber.Text = kimo.PartNumber;
-            Size.Text = kimo.Size;
-            PowerSource.Text = kimo.PowerSource;
-            IncludeComponenets.Text = string.Join("\n", kimo.IncludeComponenets.ToArray());
-            Torque.Text = kimo.Tourque;
-            InstallationMethod.Text = kimo.InstallationMethod;
-            Note.Text = kimo.Note;
-
-            materialComboBox.SelectedItem = kimo.Material;
-            speedComboBox.SelectedItem = kimo.Speed;
-
-            ConcreteCheckbox.IsChecked = kimo.Usage.Concrete;
-            WoodCheckbox.IsChecked = kimo.Usage.Wood;
-            MetalCheckbox.IsChecked = kimo.Usage.Metal;
-            HardBrickCheckbox.IsChecked = kimo.Usage.HardBrick;
-            HardMaterialCheckbox.IsChecked = kimo.Usage.HardMaterial;
-            ScrewDriverCheckbox.IsChecked = kimo.Usage.ScrewDriver;
+            DataContext = kimo;
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-            Manufactuerer.Text = string.Empty;
-            PackageDimensions.Text = string.Empty;
-            ItemWeight.Text = string.Empty;
-            PartNumber.Text = string.Empty;
-            Size.Text = string.Empty;
-            PowerSource.Text = string.Empty;
-            IncludeComponenets.Text = string.Empty;
-            Torque.Text = string.Empty;
-            InstallationMethod.Text = string.Empty;
-            Note.Text = string.Empty;
-
-            materialComboBox.SelectedIndex = 0;
-            speedComboBox.SelectedIndex = 0;
-
-            ConcreteCheckbox.IsChecked = false;
-            WoodCheckbox.IsChecked = false;
-            MetalCheckbox.IsChecked = false;
-            HardBrickCheckbox.IsChecked = false;
-            HardMaterialCheckbox.IsChecked = false;
-            ScrewDriverCheckbox.IsChecked = false;
+            DataContext = null;
         }
     }
 

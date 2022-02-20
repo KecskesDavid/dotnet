@@ -3,11 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:lab_1_b"
+        xmlns:model="clr-namespace:lab_1_b.Model"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="950"
         Width="450">
+    <Window.DataContext>
+        <model:Drill />
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -56,9 +59,9 @@
         <StackPanel Grid.Column="0"
                     Grid.Row="2"
                     Grid.ColumnSpan="2">
-            <Label Content="Manufacturer:" />
+            <Label Content="Manufactuerer:" />
             <TextBox Name="Manufactuerer"
-                     Text="{Binding Manufacturer}" />
+                     Text="{Binding Manufactuerer}" />
         </StackPanel>
 
         <StackPanel Grid.Column="0"
@@ -124,17 +127,23 @@
                     x:Name="usageCheckbox">
             <Label Content="Usage:" />
             <CheckBox x:Name="ConcreteCheckbox"
-                      Content="Concrete" />
+                      Content="Concrete"
+                      IsChecked="{Binding Usage.Concrete}" />
             <CheckBox x:Name="WoodCheckbox"
-                      Content="Wood" />
+                      Content="Wood"
+                      IsChecked="{Binding Usage.Wood}" />
             <CheckBox x:Name="MetalCheckbox"
-                      Content="Metal" />
+                      Content="Metal"
+                      IsChecked="{Binding Usage.Metal}" />
             <CheckBox x:Name="HardBrickCheckbox"
-                      Content="Hard Brick" />
+                      Content="Hard Brick"
+                      IsChecked="{Binding Usage.HardBrick}" />
             <CheckBox x:Name="HardMaterialCheckbox"
-                      Content="Hard Material" />
+                      Content="Hard Material"
+                      IsChecked="{Binding Usage.HardMaterial}" />
             <CheckBox x:Name="ScrewDriverCheckbox"
-                      Content="ScrewDriver" />
+                      Content="ScrewDriver"
+                      IsChecked="{Binding Usage.ScrewDriver}" />
         </StackPanel>
 
         <StackPanel Grid.Column="0"
@@ -157,8 +166,8 @@
                     Grid.Row="11"
                     Grid.ColumnSpan="2">
             <Label Content="Include Components:" />
-            <TextBox Name="IncludeComponenets"
-                     Text="{Binding IncludeComponenets}" />
+            <ListView Name="IncludeComponenets"
+                      ItemsSource="{Binding IncludeComponenets}" />
         </StackPanel>
 
         <StackPanel Grid.Column="0"

@@ -21,10 +21,14 @@ namespace lab_1_b.Model
         public string Size { get; set; }
         public Speed Speed { get; set; }
         public IList<Speed> Speeds { get; set; }
-        public string Tourque { get; set; }
+        public string Torque { get; set; }
         public Usage Usage { get; set; }
 
-        public Drill(List<string> includeComponenets, string installationMethod, string itemWeight, string manufactuerer, Material material, IList<Material> materials, string note, string packageDimensions, string partNumber, string powerSource, string size, Speed speed, IList<Speed> speeds, string tourque, Usage usage)
+        public Drill()
+        {
+        }
+
+        public Drill(List<string> includeComponenets, string installationMethod, string itemWeight, string manufactuerer, Material material, IList<Material> materials, string note, string packageDimensions, string partNumber, string powerSource, string size, Speed speed, IList<Speed> speeds, string torque, Usage usage)
         {
             IncludeComponenets = includeComponenets;
             InstallationMethod = installationMethod;
@@ -39,7 +43,7 @@ namespace lab_1_b.Model
             Size = size;
             Speed = speed;
             Speeds = speeds;
-            Tourque = tourque;
+            Torque = torque;
             Usage = usage;
         }
     }
