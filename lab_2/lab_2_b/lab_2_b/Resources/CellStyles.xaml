@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:lab_2_b"
+                    xmlns:helper="clr-namespace:lab_2_b.Helper">
+
+    <helper:IntegerToBrushConverter x:Key="ITBConverter" />
+
+    <DataTemplate x:Key="IdCellTemplate">
+        <TextBlock Foreground="Black"
+                   FontFamily="Calibri"
+                   Text="{Binding ProductId}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="IdHeaderTemplate">
+        <TextBlock Foreground="CadetBlue"
+                   FontFamily="Calibri"
+                   Text="Id" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="NameCellTemplate">
+        <TextBlock Foreground="Black"
+                   FontFamily="Calibri"
+                   Text="{Binding ProductName}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="NameHeaderTemplate">
+        <TextBlock Foreground="CadetBlue"
+                   FontFamily="Calibri"
+                   Text="Name" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="PackSizeCellTemplate">
+        <TextBlock Foreground="Black"
+                   FontFamily="Calibri"
+                   Text="{Binding Quantity}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="PackSizeHeaderTemplate">
+        <TextBlock Foreground="CadetBlue"
+                   FontFamily="Calibri"
+                   Text="Pack Size" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="QuantityCellTemplate">
+        <TextBlock Foreground="{Binding Quantity,
+            Converter={x:Static helper:IntegerToBrushConverter.ITBConverter}}"
+                   FontFamily="Calibri"
+                   Text="{Binding Quantity}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="QuantityHeaderTemplate">
+        <TextBlock Foreground="CadetBlue"
+                   FontFamily="Calibri"
+                   Text="Quantity" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="AnnualSalesCellTemplate">
+        <TextBlock Foreground="{Binding AnnualSales,
+            Converter={x:Static helper:AnnualSalesToBrushConverter.AsTBConverter}}"
+                   FontFamily="Calibri"
+                   Text="{Binding AnnualSales}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="AnnualSalesHeaderTemplate">
+        <TextBlock Foreground="CadetBlue"
+                   FontFamily="Calibri"
+                   Text="Annual Sales" />
+    </DataTemplate>
+</ResourceDictionary>
