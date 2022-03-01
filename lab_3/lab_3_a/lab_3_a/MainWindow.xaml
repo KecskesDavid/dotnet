@@ -13,8 +13,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <vw:CollectionView Grid.Row="0" />
-        <TextBlock Text="{Binding User.Name}"
+        <vw:CollectionView Grid.Row="0"
+                           x:Name="collectionView" />
+        <TextBlock x:Name="txtName"
+                   Text="{Binding User.Name}"
                    Grid.Row="1"
                    Foreground="Black"
                    FontSize="28"

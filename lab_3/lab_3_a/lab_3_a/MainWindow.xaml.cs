@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace lab_3_a
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         MainViewModel viewModel = new MainViewModel();
@@ -29,6 +26,7 @@ namespace lab_3_a
         }
         private void btnChangeName_Click(object sender, RoutedEventArgs e)
         {
+            collectionView.ChangeUserName(txtNewName.Text);
             viewModel.ChangeName(txtNewName.Text);
         }
     }

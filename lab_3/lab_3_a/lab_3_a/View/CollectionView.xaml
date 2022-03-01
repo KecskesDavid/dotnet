@@ -11,12 +11,15 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding Users}"
+        <ListView 
+            x:Name="listView"
+                  ItemsSource="{Binding Users}"
                   Background="White"
-                  Foreground="Black">
+                  Foreground="Black"
+                  PreviewMouseLeftButtonUp="selectUser_Click">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"
+                    <TextBlock Text="{Binding ConcatProperties}"
                                FontSize="24"
                                Padding="10" />
                 </DataTemplate>

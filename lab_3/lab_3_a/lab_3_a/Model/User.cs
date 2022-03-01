@@ -9,17 +9,24 @@ namespace lab_3_a.Model
 {
     public class User : INotifyPropertyChanged
     {
-        private string _Name { 
+        private string _Name;
+        public string Name
+        {
             get { return _Name; }
             set
             {
                 _Name = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
-            } 
+            }
         }
-        public string Name { get; set; }
+        public long Id { get; set; }
         public Gender Gender { get; set; }
         public string Email { get; set; }
+        public string ConcatProperties
+        {
+            get { return Name + " " + Email + " " + Gender; }
+            set { }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
